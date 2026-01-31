@@ -17,7 +17,7 @@ const Hero = () => {
           "inset-x-0 inset-y-[-30%] h-[200%]"
         )}
       />
-      <div className="asbolute inset-0 z-20 bg-transparent">
+      <div className="asbolute inset-0 z-20 pt-6 sm:pt-8 bg-transparent">
         <div className="w-full h-full flex flex-col items-center justify-center gap-8 sm:gap-12">
           <div className="max-w-3xl flex flex-col items-center justify-center gap-3">
             <h1 className="text-6xl font-bold text-center">Unleash the Power of AI: Revolutionize Your Interactions with Beedy AI</h1>

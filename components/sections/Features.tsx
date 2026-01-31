@@ -1,8 +1,8 @@
-import React from 'react'
-import ChatBotView from '../widgets/ChatBotView'
-import Image from 'next/image'
-import ChatbotView from "@/assets/images/BeedyAI.png"
-import { FEATURES_EN } from '@/lib/constants/en'
+import React from 'react';
+import ChatBotView from '../widgets/ChatBotView';
+import Image from 'next/image';
+import ChatbotView from "@/assets/images/BeedyAI.png";
+import { FEATURES_EN } from '@/lib/constants/en';
 
 const Features = () => {
   return (
@@ -34,7 +34,7 @@ const Features = () => {
         </ChatBotView>
       </div>
     </div>
-  )
+  );
 }
 
-export default Features
+export default Features;

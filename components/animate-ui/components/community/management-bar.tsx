@@ -6,11 +6,12 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { BUTTON_MOTION_CONFIG, LABEL_VARIANTS, LABEL_TRANSITION, NAVBAR_MENU_DATA } from '@/lib/constants';
+import { Icons } from '@/lib/constants/icons';
 
 function ManagementBar() {
   return (
     <div className="@container/wrapper w-full flex justify-center">
-      <div className="flex w-fit flex-col @xl/wrapper:flex-row items-center gap-y-2 rounded-full border border-border bg-background p-1.5 shadow-lg">
+      <div className="flex w-fit flex-col @xl/wrapper:flex-row items-center gap-y-2 rounded-full border border-border/40 bg-background/10 backdrop-blur-xs p-1.5 shadow-lg">
         <div className="mx-auto flex flex-col @lg/wrapper:flex-row shrink-0 items-center">
           <motion.div
             layout
@@ -19,14 +20,14 @@ function ManagementBar() {
           >
             <motion.button
               {...BUTTON_MOTION_CONFIG}
-              className="flex h-auto items-center space-x-2 overflow-hidden whitespace-nowrap rounded-full bg-fuchsia-500 shadow-sm dark:bg-neutral-600/80 px-2.5 py-2.5 text-white"
+              className="flex h-auto items-center space-x-2 overflow-hidden whitespace-nowrap rounded-full bg-white shadow-sm dark:bg-neutral-600/80 px-2.5 py-2.5 text-white"
               aria-label={`Beedy AI`}
             >
-              <BoxIcon size={20} className="shrink-0" />
+              <Icons.beedyAI />
               <motion.span
                 variants={LABEL_VARIANTS}
                 transition={LABEL_TRANSITION}
-                className="invisible text-sm font-semibold text-white"
+                className="invisible text-sm font-semibold bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-blue-500"
               >
                 Beedy AI
               </motion.span>
