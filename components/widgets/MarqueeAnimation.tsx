@@ -1,16 +1,14 @@
 import { cn } from "@/lib/utils"
 import { Marquee } from "../ui/marquee"
-import { reviews } from "@/lib/constants"
+import { reviews } from "@/lib/constants/en"
 import Image from "next/image"
 
 const ReviewCard = ({
   img,
-  name,
-  username,
+  name
 }: {
   img: string
   name: string
-  username: string
 }) => {
   return (
     <figure
@@ -39,7 +37,7 @@ export function MarqueeAnimation() {
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee className="[--duration:20s]">
         {reviews.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
       <div className="from-white via-white to-transparent pointer-events-none absolute z-10 inset-y-0 left-0 w-1/2 bg-linear-to-r"></div>
