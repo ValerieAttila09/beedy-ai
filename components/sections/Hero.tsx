@@ -11,7 +11,7 @@ const Hero = () => {
     <section className="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden border p-20">
       <AnimatedGridPattern
         numSquares={30}
-        maxOpacity={0.1}
+        maxOpacity={0.3}
         duration={2}
         repeatDelay={1}
         className={cn(

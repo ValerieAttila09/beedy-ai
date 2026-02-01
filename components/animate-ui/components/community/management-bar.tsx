@@ -11,8 +11,8 @@ import { Icons } from '@/lib/constants/icons';
 function ManagementBar() {
   return (
     <div className="@container/wrapper w-full flex justify-center">
-      <div className="flex w-fit flex-col @xl/wrapper:flex-row items-center gap-y-2 rounded-full border border-border/40 bg-background/10 backdrop-blur-xs p-1.5 shadow-lg">
-        <div className="mx-auto flex flex-col @lg/wrapper:flex-row shrink-0 items-center">
+      <div className="flex w-fit @xl/wrapper:flex-row items-center gap-y-2 rounded-full border border-border/40 bg-background/10 backdrop-blur-xs p-1.5 shadow-lg">
+        <div className="mx-auto flex @lg/wrapper:flex-row shrink-0 items-center">
           <motion.div
             layout
             layoutRoot
@@ -64,7 +64,7 @@ function ManagementBar() {
         <div className="mx-3 hidden h-6 w-px bg-border @xl/wrapper:block rounded-full" />
         <motion.button
           whileTap={{ scale: 0.975 }}
-          className="flex h-10 text-sm cursor-pointer items-center justify-center rounded-full bg-blue-500 dark:bg-blue-600/80 px-3 py-2 text-white transition-colors duration-300 dark:hover:bg-blue-800 hover:bg-blue-600 w-full @xl/wrapper:w-auto"
+          className="flex h-10 text-sm cursor-pointer items-center justify-center rounded-full bg-blue-500 dark:bg-blue-600/80 px-3 py-2 text-white transition-colors duration-300 dark:hover:bg-blue-800 hover:bg-blue-600 w-full"
         >
           <span className="font-medium text-white">Sign Up</span>
         </motion.button>
