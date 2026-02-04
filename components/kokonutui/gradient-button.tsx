@@ -1,36 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
-type ColorVariant = "emerald" | "purple" | "orange";
-
-interface GradientColors {
-  dark: {
-    border: string;
-    overlay: string;
-    accent: string;
-    text: string;
-    glow: string;
-    textGlow: string;
-    hover: string;
-  };
-  light: {
-    border: string;
-    base: string;
-    overlay: string;
-    accent: string;
-    text: string;
-    glow: string;
-    hover: string;
-  };
-}
-
-interface GradientButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: string;
-  label?: string;
-  className?: string;
-  variant?: ColorVariant;
-}
+import {Button} from "@/components/ui/button";
+import {cn} from "@/lib/utils";
+import {GradientButtonProps, GradientColors} from "@/types/interfaces";
 
 const gradientColors: Record<ColorVariant, GradientColors> = {
   emerald: {
@@ -114,7 +84,7 @@ export default function GradientButton({
     >
       <div
         className={cn(
-          "absolute inset-0 rounded-lg bg-linear-to-b p-[2px]",
+          "absolute inset-0 rounded-lg bg-linear-to-b p-0.5",
           "dark:bg-none",
           colors.light.border,
           colors.dark.border
@@ -131,7 +101,7 @@ export default function GradientButton({
 
       <div
         className={cn(
-          "absolute inset-[2px] rounded-lg opacity-95",
+          "absolute inset-0.5 rounded-lg opacity-95",
           "bg-white/80",
           "dark:bg-[#0C1F21]"
         )}
@@ -139,21 +109,21 @@ export default function GradientButton({
 
       <div
         className={cn(
-          "absolute inset-[2px] rounded-lg bg-linear-to-r opacity-90",
+          "absolute inset-0.5 rounded-lg bg-linear-to-r opacity-90",
           colors.light.base,
           "dark:from-[#0C1F21] dark:via-[#0C1F21] dark:to-[#0C1F21]"
         )}
       />
       <div
         className={cn(
-          "absolute inset-[2px] rounded-lg bg-linear-to-b opacity-80",
+          "absolute inset-0.5 rounded-lg bg-linear-to-b opacity-80",
           colors.light.overlay,
           colors.dark.overlay
         )}
       />
       <div
         className={cn(
-          "absolute inset-[2px] rounded-lg bg-linear-to-br",
+          "absolute inset-0.5 rounded-lg bg-linear-to-br",
           colors.light.accent,
           colors.dark.accent
         )}
@@ -161,7 +131,7 @@ export default function GradientButton({
 
       <div
         className={cn(
-          "absolute inset-[2px] rounded-lg",
+          "absolute inset-0.5 rounded-lg",
           `shadow-[inset_0_0_10px_${colors.light.glow}]`,
           `dark:shadow-[inset_0_0_10px_${colors.dark.glow}]`
         )}

@@ -8,7 +8,7 @@ import SupabaseLogo from "../../assets/icons/supabase-logo.svg"
 
 export const HERO_SECTION_EN = {
   title: "Revolutionize Your Interactions with Beedy AI",
-  description: "Our AI-powered chatbot provides round-the-clock support, answering customer queries instantly and reducing response times. Easily integrate our chatbot with your existing platforms and workflows.",
+  description: "Our AI-powered chatbot provides round-the-clock support, answering customer queries instantly and reducing response times.",
   button: "Get Started",
   button2: "Read Docs",
   supports: "Supported by many well-known companies"
@@ -95,7 +95,7 @@ export const PRICING_SECTION_EN = {
       id: 'pro',
       title: 'Pro',
       priceMonthly: '$49',
-      priceYearly: '$490',
+      priceYearly: '$399',
       credits: '50 credit total',
       description: 'For growing teams who need more power',
       features: [
@@ -114,8 +114,8 @@ export const PRICING_SECTION_EN = {
     {
       id: 'business',
       title: 'Business',
-      priceMonthly: '$299',
-      priceYearly: '$2990',
+      priceMonthly: '$99',
+      priceYearly: '$899',
       credits: '100 credit total',
       description: 'For large teams and mission-critical usage',
       features: [
@@ -133,12 +133,12 @@ export const PRICING_SECTION_EN = {
     {
       id: 'enterprise',
       title: 'Enterprise',
-      priceMonthly: 'Contact',
-      priceYearly: 'Contact',
+      priceMonthly: 'Custom',
+      priceYearly: 'Custom',
       credits: 'Unlimited credits',
       description: 'Custom solutions for large organizations',
       features: [
-        { label: 'SLA & Compliance', icon: 'Shield' },
+        { label: 'SLA & Compliance', icon: 'ShieldCheck' },
         { label: 'Dedicated onboarding', icon: 'Users' },
         { label: 'Custom integrations', icon: 'Wrench' },
         { label: 'Priority SLA', icon: 'Clock' },

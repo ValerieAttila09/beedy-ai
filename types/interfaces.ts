@@ -1,5 +1,5 @@
-import { LucideProps } from "lucide-react";
-import { ComponentPropsWithoutRef } from "react";
+import {LucideProps} from "lucide-react";
+import {ComponentPropsWithoutRef} from "react";
 
 export interface NavbarMenuData {
   title: string;
@@ -96,4 +96,33 @@ export interface StatsSection {
 export interface SidebarProps {
   open: boolean;
   onClose: () => void;
+}
+
+export interface GradientColors {
+    dark: {
+        border: string;
+        overlay: string;
+        accent: string;
+        text: string;
+        glow: string;
+        textGlow: string;
+        hover: string;
+    };
+    light: {
+        border: string;
+        base: string;
+        overlay: string;
+        accent: string;
+        text: string;
+        glow: string;
+        hover: string;
+    };
+}
+
+export interface GradientButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    icon?: string;
+    label?: string;
+    className?: string;
+    variant?: ColorVariant;
 }

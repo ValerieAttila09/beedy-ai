@@ -2,6 +2,10 @@ import React from 'react';
 import { FOOTER_SECTION_EN } from '@/lib/constants/en';
 import { Icons } from '@/lib/constants/icons';
 import { Twitter, Github, Send, Download } from 'lucide-react';
+import {Separator} from "@/components/ui/separator";
+import Image from "next/image";
+import BeedyAiFrame from "../../assets/icons/beedy-ai-frame.svg";
+import {StripedPattern} from "@/components/magicui/striped-pattern";
 
 const AppBadge: React.FC<{ label: string }> = ({ label }) => (
   <a aria-label={label} className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/95 text-sm font-medium text-neutral-800 shadow-sm hover:shadow-md transition-transform transform hover:-translate-y-1" href="#">
@@ -62,8 +66,15 @@ const Footer = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-8 border-t pt-6 text-sm text-neutral-500 text-center">{FOOTER_SECTION_EN.copyright}</div>
+      </div>
+      <Separator className={"mt-8 "}/>
+      <div className="py-6 text-sm text-neutral-500 text-center">{FOOTER_SECTION_EN.copyright}</div>
+      <Separator className={""}/>
+      <div className="relative flex min-h-[380px] w-full flex-col items-center justify-center overflow-hidden border-y border-border">
+        <StripedPattern />
+        <div className="absolute inset-0 z-20 w-full h-full flex items-center justify-center">
+        <Image src={BeedyAiFrame} alt={"beedy ai frame"} className={"w-3/4 h-auto object-cover"} width={1080} height={1080} />
+        </div>
       </div>
     </footer>
   )

@@ -29,8 +29,6 @@ function useCount(target: number) {
   return value;
 }
 
-const dotSize = 8;
-
 const Stats = () => {
   const section = STATS_SECTION_EN;
   const [activeYear, setActiveYear] = useState(1);
@@ -117,7 +115,7 @@ const Stats = () => {
 
             <div className="mt-8 flex gap-2 items-center">
               {metricKeys.map((m) => (
-                <button key={m.key} onClick={() => setSelectedMetric(m.key)} aria-pressed={m.key === selectedMetric} className={`px-3 py-1 rounded-full text-sm ${m.key === selectedMetric ? 'bg-orange-500 text-white' : 'bg-neutral-100 text-neutral-700'}`}>
+                <button key={m.key} onClick={() => setSelectedMetric(m.key)} aria-pressed={m.key === selectedMetric} className={`px-3 py-1 rounded-full text-sm ${m.key === selectedMetric ? 'bg-fuchsia-500 text-white' : 'bg-neutral-100 text-neutral-700'}`}>
                   {m.label}
                 </button>
               ))}
@@ -151,7 +149,7 @@ const Stats = () => {
                   <XAxis dataKey="name" axisLine={false} tickLine={false} />
                   <YAxis hide domain={yDomain} />
                   <RechartsTooltip content={<CustomTooltip />} />
-                  <Line type={"monotone"} dataKey="value" stroke="var(--color-value)" strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 6 }} isAnimationActive animationDuration={600} />
+                  <Line type={"monotone"} dataKey="value" stroke="#df33f2" strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 6 }} isAnimationActive animationDuration={600} />
                 </LineChart>
               </ChartContainer>
             </div>

@@ -66,7 +66,7 @@ export function AnimatedGridPattern({
       })
     },
     [getPos]
-  )
+  );
 
   useEffect(() => {
     if (dimensions.width && dimensions.height) {
@@ -99,7 +99,7 @@ export function AnimatedGridPattern({
     return () => {
       resizeObserver.disconnect()
     }
-  }, [])
+  }, []);
 
   return (
     <svg
@@ -146,7 +146,7 @@ export function AnimatedGridPattern({
             height={height - 1}
             x={squareX * width + 1}
             y={squareY * height + 1}
-            fill="currentColor"
+            fill="#df33f2"
             strokeWidth="0"
           />
         ))}

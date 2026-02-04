@@ -13,9 +13,9 @@ export function StripedPattern({
   height = 10,
   ...props
 }: StripedPatternProps) {
-  const id = useId()
-  const w = Number(width)
-  const h = Number(height)
+  const id = useId();
+  const w = Number(width);
+  const h = Number(height);
 
   return (
     <svg
@@ -31,15 +31,15 @@ export function StripedPattern({
         <pattern id={id} width={w} height={h} patternUnits="userSpaceOnUse">
           {direction === "left" ? (
             <>
-              <line x1="0" y1={h} x2={w} y2="0" stroke="currentColor" />
-              <line x1={-w} y1={h} x2="0" y2="0" stroke="currentColor" />
-              <line x1={w} y1={h} x2={w * 2} y2="0" stroke="currentColor" />
+              <line x1="0" y1={h} x2={w} y2="0" stroke="#a9a9a9" />
+              <line x1={-w} y1={h} x2="0" y2="0" stroke="#a9a9a9" />
+              <line x1={w} y1={h} x2={w * 2} y2="0" stroke="#a9a9a9" />
             </>
           ) : (
             <>
-              <line x1="0" y1="0" x2={w} y2={h} stroke="currentColor" />
-              <line x1={-w} y1="0" x2="0" y2={h} stroke="currentColor" />
-              <line x1={w} y1="0" x2={w * 2} y2={h} stroke="currentColor" />
+              <line x1="0" y1="0" x2={w} y2={h} stroke="#a9a9a9" />
+              <line x1={-w} y1="0" x2="0" y2={h} stroke="#a9a9a9" />
+              <line x1={w} y1="0" x2={w * 2} y2={h} stroke="#a9a9a9" />
             </>
           )}
         </pattern>

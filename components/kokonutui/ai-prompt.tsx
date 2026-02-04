@@ -1,18 +1,8 @@
 "use client";
 
-/**
- * @author: @kokonutui
- * @description: AI Prompt Input
- * @version: 1.0.0
- * @date: 2025-06-26
- * @license: MIT
- * @website: https://kokonutui.com
- * @github: https://github.com/kokonut-labs/kokonutui
- */
-
 import { ArrowRight, Bot, Check, ChevronDown, Paperclip } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Anthropic from "@/components/kokonutui/anthropic";
 import AnthropicDark from "@/components/kokonutui/anthropic-dark";
 import { Button } from "@/components/ui/button";
@@ -25,7 +15,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
 import { cn } from "@/lib/utils";
-import { AI_MODELS, MODEL_ICONS, OPENAI_SVG } from "@/lib/constants/icons";
+import { AI_MODELS, MODEL_ICONS } from "@/lib/constants/icons";
 
 export default function AI_Prompt() {
   const [value, setValue] = useState("");

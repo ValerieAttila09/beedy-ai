@@ -1,11 +1,11 @@
 "use client";
 
-import { ABOUT_SECTION_EN } from '@/lib/constants/en';
+import {ABOUT_SECTION_EN, HERO_SECTION_EN} from '@/lib/constants/en';
 import Image from 'next/image';
 import AboutUsImage from "../../assets/images/joel-filipe-VuwAfoHpxgs-unsplash.jpg"
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {MarqueeAnimation} from "@/components/widgets/MarqueeAnimation";
 
 const About = () => {
   return (

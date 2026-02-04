@@ -27,7 +27,7 @@ function ManagementBar() {
               <motion.span
                 variants={LABEL_VARIANTS}
                 transition={LABEL_TRANSITION}
-                className="invisible text-sm font-semibold bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-blue-500"
+                className="invisible text-sm font-semibold bg-clip-text text-transparent bg-linear-to-r from-fuchsia-500 to-blue-500"
               >
                 Beedy AI
               </motion.span>
@@ -64,7 +64,7 @@ function ManagementBar() {
         <div className="mx-3 hidden h-6 w-px bg-border @xl/wrapper:block rounded-full" />
         <motion.button
           whileTap={{ scale: 0.975 }}
-          className="flex h-10 text-sm cursor-pointer items-center justify-center rounded-full bg-blue-500 dark:bg-blue-600/80 px-3 py-2 text-white transition-colors duration-300 dark:hover:bg-blue-800 hover:bg-blue-600 w-full"
+          className="flex h-10 text-sm cursor-pointer items-center justify-center rounded-full bg-fuchsia-500 dark:bg-fuchsia-600/80 px-3 py-2 text-white transition-colors duration-300 dark:hover:bg-fuchsia-800 hover:bg-fuchsia-600 w-full"
         >
           <span className="font-medium text-white">Sign Up</span>
         </motion.button>

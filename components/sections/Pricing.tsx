@@ -52,32 +52,32 @@ const Pricing = () => {
         <div className="mt-10 grid gap-6 grid-cols-1 md:grid-cols-4">
           {PRICING_SECTION_EN.plans.map((plan) => (
             <motion.div
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -3, boxShadow: '0 10px 20px rgba(0, 0, 0, 0.12)' }}
               key={plan.id}
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45 }}
-              className={`p-6 flex flex-col justify-between rounded-xl border bg-white shadow-sm relative ${plan.popular ? 'ring-2 ring-blue-300' : ''}`}
+              transition={{ duration: 0.21 }}
+              className={`flex flex-col justify-between rounded-xl border bg-white shadow-sm relative`}
             >
               {plan.popular && <div className="absolute -top-3 left-5 inline-block px-3 py-1 bg-neutral-900 text-white rounded-full text-xs font-semibold">Popular</div>}
               <div className="">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-semibold">{plan.title}</h3>
-                    <p className="text-sm text-neutral-500 mt-1">{plan.credits}</p>
+                <div className="space-y-2">
+                  <div className="border-b border-border pb-3 px-6 pt-6 bg-accent rounded-t-xl">
+                    <h3 className="text-lg/4 font-semibold">{plan.title}</h3>
+                    <p className="text-xs text-neutral-500 mt-1">{plan.credits}</p>
                   </div>
-                  <div className="text-right flex items-baseline gap-2">
+                  <div className="text-right flex items-baseline gap-1 px-6">
                     <div className="text-3xl md:text-4xl font-extrabold tracking-tight">{billing === 'monthly' ? plan.priceMonthly : plan.priceYearly}</div>
                     <div className="text-sm text-neutral-500">{billing === 'monthly' ? '/mo' : '/yr'}</div>
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm text-neutral-600">{plan.description}</p>
+                <p className="px-6 mt-4 text-sm text-neutral-600">{plan.description}</p>
 
-                <ul className="mt-5 grid gap-3 text-sm text-neutral-600">
+                <ul className="mt-5 grid gap-3 text-sm text-neutral-600 px-6">
                   {plan.features.map((f) => (
-                    <li key={f.label} className="flex items-start gap-3">
+                    <li key={f.label} className="flex items-center gap-3">
                       <div className="mt-1 text-neutral-700 shrink-0 w-6 h-6 flex items-center justify-center rounded-sm bg-neutral-50 border">{ICON_MAP[f.icon || 'MessageSquare']}</div>
                       <div className="leading-tight">{f.label}</div>
                     </li>
@@ -85,8 +85,8 @@ const Pricing = () => {
                 </ul>
               </div>
 
-              <div className="mt-6">
-                <button className="w-full rounded-full bg-neutral-900 hover:bg-neutral-800 text-white py-3 font-medium shadow">{plan.cta}</button>
+              <div className="mt-6 px-3 pb-3">
+                <button className="w-full rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white py-3 font-medium shadow">{plan.cta}</button>
               </div>
             </motion.div>
           ))}
@@ -96,4 +96,4 @@ const Pricing = () => {
   )
 }
 
-export default Pricing
+export default Pricing;

@@ -6,8 +6,8 @@ import { CTA_SECTION_EN } from '@/lib/constants/en';
 import { Book, MonitorPlay } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.ReactNode> = {
-  Book: <Book size={24} />,
-  MonitorPlay: <MonitorPlay size={24} />,
+  Book: <Book size={36} />,
+  MonitorPlay: <MonitorPlay size={36} />,
 };
 
 const CTA = () => {
@@ -18,7 +18,7 @@ const CTA = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left content */}
             <div className="p-8">
-              <span className="inline-block bg-neutral-100 text-sm text-neutral-700 px-3 py-1 rounded-full">Get Started</span>
+              <span className="border border-border inline-block bg-neutral-100 text-sm text-neutral-700 px-3 py-1 rounded-full">Get Started</span>
               <h3 className="mt-4 text-2xl md:text-3xl font-bold text-neutral-900">{CTA_SECTION_EN.title}</h3>
               <p className="mt-3 text-neutral-600 max-w-xl">{CTA_SECTION_EN.description}</p>
 
@@ -32,10 +32,10 @@ const CTA = () => {
             <div className="border-t md:border-t-0 md:border-l border-border/50">
               <div className="flex flex-col justify-between">
                 {CTA_SECTION_EN.items.map((it) => (
-                  <div key={it.title} className="cursor-pointer min-h-36 flex items-start gap-4 p-6 hover:bg-neutral-100 transition first:border-b border-border">
-                    <div className="p-4 rounded-full flex items-center justify-center text-foreground">{ICON_MAP[it.icon]}</div>
+                  <div key={it.title} className="cursor-pointer min-h-42 flex items-start gap-4 p-6 hover:bg-neutral-100 transition first:border-b border-border">
+                    <div className="p-2 rounded-full flex items-center justify-center text-foreground">{ICON_MAP[it.icon]}</div>
                     <div>
-                      <h4 className="text-xl font-semibold text-neutral-900">{it.title}</h4>
+                      <h4 className="text-2xl font-semibold text-neutral-900">{it.title}</h4>
                       <p className="text-md text-neutral-600">{it.description}</p>
                     </div>
                   </div>
