@@ -44,9 +44,9 @@ export const reviews = [
 export const ABOUT_SECTION_EN = {
   title: "About Beedy AI",
   subtitle: "Deliver delightful, automated support and insights with our conversational AI platform.",
-  description: "Beedy AI is a modern conversational AI platform that helps teams automate customer support, reduce response times, and surface actionable insights from every interaction. Built on state-of-the-art language models, Beedy focuses on reliability, privacy, and seamless integration so teams can deploy assistive agents across chat, email, and internal tools without heavy engineering overhead.",
+  description: "Beedy AI is a modern conversational AI platform that helps teams automate customer support, reduce response times, and surface actionable insights from every interaction.",
   corePhilosophyTitle: "Core Philosophy",
-  corePhilosophy: "We believe AI should augment human expertise rather than replace it. Our mission is to make intelligent assistance accessible and trustworthy through transparent model behavior, simple integration, and operational controls that let teams tune and measure outcomes. Practicality and ethics guide our product decisions—delivering measurable value while protecting your users and data.",
+  corePhilosophy: "We believe AI should augment human expertise rather than replace it. Our mission is to make intelligent assistance accessible and trustworthy through transparent model behavior, simple integration, and operational controls that let teams tune and measure outcomes.",
   points: [
     {
       title: "24/7 Smart Support",

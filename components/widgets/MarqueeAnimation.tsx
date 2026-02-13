@@ -40,10 +40,10 @@ export function MarqueeAnimation() {
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
-      <div className="from-white via-white to-transparent pointer-events-none absolute z-10 inset-y-0 left-0 w-1/3 bg-linear-to-r"></div>
-      <div className="from-white via-white to-transparent pointer-events-none absolute z-10 inset-y-0 right-0 w-1/3 bg-linear-to-l"></div>
-      <div className="from-white via-white to-transparent pointer-events-none absolute z-12 inset-y-0 left-0 w-1/3 bg-linear-to-r"></div>
-      <div className="from-white via-white to-transparent pointer-events-none absolute z-12 inset-y-0 right-0 w-1/3 bg-linear-to-l"></div>
+      <div className="from-white via-white to-transparent pointer-events-none absolute z-10 inset-y-0 left-0 w-1/4 sm:w-1/3 bg-linear-to-r"></div>
+      <div className="from-white via-white to-transparent pointer-events-none absolute z-10 inset-y-0 right-0 w-1/4 sm:w-1/3 bg-linear-to-l"></div>
+      <div className="hidden sm:block from-white via-white to-transparent pointer-events-none absolute z-12 inset-y-0 left-0 w-1/3 bg-linear-to-r"></div>
+      <div className="hidden sm:block from-white via-white to-transparent pointer-events-none absolute z-12 inset-y-0 right-0 w-1/3 bg-linear-to-l"></div>
     </div>
   )
 }

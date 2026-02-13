@@ -6,15 +6,18 @@ import AboutUsImage from "../../assets/images/joel-filipe-VuwAfoHpxgs-unsplash.j
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import {MarqueeAnimation} from "@/components/widgets/MarqueeAnimation";
+import BeedyLogo from "../../assets/icons/logo-beedy-ai-new.png";
 
 const About = () => {
   return (
     <section className="w-full min-h-screen px-[6%] sm:px-[8%] md:px-[12%] py-20">
       <div className="container relative grid sm:grid-cols-12 gap-6 sm:gap-8">
         <div className="sm:hidden sm:col-span-4" />
-        <div className="sm:col-span-4 space-y-4 sm:sticky sm:top-20 sm:self-start">
-          <div className="flex items-center gap-2">
-            <div className="h-12 w-12 rounded bg-neutral-100" />
+        <div className="sm:col-span-4 border-b border-border sm:border-b-0 space-y-4 py-4 sm:py-0 sm:sticky sm:top-20 sm:self-start">
+          <div className="flex items-center gap-2 sm:p-0">
+            <div className="h-8 w-8 overflow-hidden">
+              <Image src={BeedyLogo} alt='Beedy Logo' width={48} height={48} className='w-full h-full object-cover'/>
+            </div>
             <div className="flex flex-col items-start justify-center">
               <h3 className="text-xl/6">Beedy AI</h3>
               <span className="text-xs text-neutral-600">{ABOUT_SECTION_EN.subtitle}</span>
@@ -31,21 +34,21 @@ const About = () => {
             <p className="text-base sm:text-md md:text-lg font-normal text-neutral-700">{ABOUT_SECTION_EN.description}</p>
           </div>
           <div className="w-full grid sm:grid-cols-2 gap-2 sm:gap-0">
-            <h3 className="text-2xl sm:col-span-1 font-semibold text-neutral-900">{ABOUT_SECTION_EN.corePhilosophyTitle}</h3>
+            <h3 className="text-xl sm:text-2xl sm:col-span-1 font-semibold text-neutral-900">{ABOUT_SECTION_EN.corePhilosophyTitle}</h3>
             <p className="text-base sm:col-span-1 font-thin text-neutral-700">{ABOUT_SECTION_EN.corePhilosophy}</p>
           </div>
           <Image src={AboutUsImage} alt='About us image' width={720} height={480} className='w-full h-auto object-cover rounded-lg' />
           <div className="w-full">
-            <h3 className="text-2xl font-semibold text-neutral-900">Beedy AI Founders</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900">Beedy AI Founders</h3>
             <div className="w-full">
               {ABOUT_SECTION_EN.founders.map((founder, i) => {
                 return (
                   <div key={founder.name} className="border-b last:border-0 border-border py-6 flex items-center justify-between">
                     <div className="flex items-center justify-start gap-8">
-                      <span className="text-md font-thin text-neutral-500">{i + 1}</span>
-                      <span className="text-md text-neutral-900 font-medium">{founder.name}</span>
+                      <span className="text-sm font-thin text-neutral-500">{i + 1}</span>
+                      <span className="text-sm text-neutral-900 font-medium">{founder.name}</span>
                     </div>
-                    <span className="text-neutral-600 font-normal text-md">{founder.role}</span>
+                    <span className="text-neutral-600 font-normal text-sm">{founder.role}</span>
                   </div>
                 );
               })}

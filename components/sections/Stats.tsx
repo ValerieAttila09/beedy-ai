@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { STATS_SECTION_EN } from '@/lib/constants/en';
 import { ChartContainer } from '@/components/ui/chart';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip } from 'recharts';
+import { Button } from '../ui/button';
 
 function useCount(target: number) {
   const [value, setValue] = useState(0);
@@ -105,7 +106,7 @@ const Stats = () => {
       <div className="container sm:mx-auto sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7">
-            <h1 className="text-5xl font-bold">{section.title}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{section.title}</h1>
             <p className="mt-4 text-neutral-600 max-w-xl">{section.description}</p>
 
             <div className="mt-8 flex gap-3">
@@ -113,11 +114,11 @@ const Stats = () => {
               <a className="inline-flex items-center gap-2 rounded-full bg-neutral-900 text-white px-4 py-2 text-sm" href="#">{section.ctaSecondary}</a>
             </div>
 
-            <div className="mt-8 flex gap-2 items-center">
+            <div className="mt-8 flex flex-wrap gap-2 items-center">
               {metricKeys.map((m) => (
-                <button key={m.key} onClick={() => setSelectedMetric(m.key)} aria-pressed={m.key === selectedMetric} className={`px-3 py-1 rounded-full text-sm ${m.key === selectedMetric ? 'bg-fuchsia-500 text-white' : 'bg-neutral-100 text-neutral-700'}`}>
+                <Button variant={'outline'} key={m.key} onClick={() => setSelectedMetric(m.key)} aria-pressed={m.key === selectedMetric} className={`px-3 py-1 hover:bg-fuchsia-100 transition-all rounded text-xs ${m.key === selectedMetric ? 'bg-fuchsia-500 text-white' : 'bg-neutral-100 text-neutral-700'}`}>
                   {m.label}
-                </button>
+                </Button>
               ))}
             </div>
 
@@ -138,7 +139,7 @@ const Stats = () => {
             <div className="relative rounded-xl border border-border overflow-hidden">
               <div className="w-full flex items-center justify-between border-b border-border">
                 {section.years.map((y, i) => (
-                  <button key={y.id} onClick={() => setActiveYear(i)} aria-pressed={i === activeYear} className={`w-full cursor-pointer p-3 text-sm ${i === activeYear ? 'bg-neutral-100 font-medium' : 'bg-white text-neutral-700'}`}>
+                  <button key={y.id} onClick={() => setActiveYear(i)} aria-pressed={i === activeYear} className={`w-full cursor-pointer p-3 text-xs ${i === activeYear ? 'bg-neutral-100 font-medium' : 'bg-white text-neutral-700'}`}>
                     {y.label}
                   </button>
                 ))}

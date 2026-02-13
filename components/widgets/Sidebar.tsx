@@ -25,7 +25,7 @@ const Sidebar = () => {
         ease: 'power2.out'
       }, 0)
       .fromTo(sidebarMenuRef.current, {
-        opacity: 0,
+        opacity: 0
       }, {
         opacity: 1,
         stagger: 0.05,
@@ -39,18 +39,20 @@ const Sidebar = () => {
   }, []);
 
   useEffect(() => {
-    if (!tlRef.current) return;
+    if (!tlRef.current || !panelRef.current) return;
 
     if (isOpen) {
+      panelRef.current.classList.remove('pointer-events-none');
       tlRef.current.play();
     } else {
       tlRef.current.reverse();
+      panelRef.current.classList.add('pointer-events-none');
     }
   }, [isOpen]);
 
   return (
     <div className="md:hidden">
-      <aside ref={panelRef} className="fixed inset-0 w-full bg-white transform z-0 opacity-0" aria-hidden={!isOpen}>
+      <aside ref={panelRef} className="fixed inset-0 w-full bg-white transform z-0 opacity-0 pointer-events-none" aria-hidden={!isOpen}>
         <nav className="px-4 pt-18">
           <ul className="space-y-3">
             {NAVBAR_MENU_DATA.map((m, idx) => (
