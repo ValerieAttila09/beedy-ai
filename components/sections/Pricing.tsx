@@ -44,8 +44,8 @@ const Pricing = () => {
           <p className="mt-3 text-neutral-600">50k+ developers trust us • Cancel any time, without any hassle</p>
 
           <div className="mt-6 inline-flex items-center rounded-full bg-neutral-100 p-1">
-            <button onClick={() => setBilling('monthly')} className={`px-5 py-2 rounded-full ${billing === 'monthly' ? 'bg-white shadow-sm' : 'bg-transparent text-neutral-600'}`}>Monthly</button>
-            <button onClick={() => setBilling('yearly')} className={`px-5 py-2 rounded-full ${billing === 'yearly' ? 'bg-white shadow-sm' : 'bg-transparent text-neutral-600'}`}>Yearly <span className="ml-2 bg-neutral-900 text-white text-xs px-2 py-0.5 rounded-full">Save 20%</span></button>
+            <button onClick={() => setBilling('monthly')} className={`px-5 py-2 cursor-pointer rounded-full ${billing === 'monthly' ? 'bg-white shadow-sm' : 'bg-transparent text-neutral-600'}`}>Monthly</button>
+            <button onClick={() => setBilling('yearly')} className={`px-5 py-2 cursor-pointer rounded-full ${billing === 'yearly' ? 'bg-white shadow-sm' : 'bg-transparent text-neutral-600'}`}>Yearly <span className="ml-2 bg-neutral-900 text-white text-xs px-2 py-0.5 rounded-full">Save 20%</span></button>
           </div>
         </motion.div>
 

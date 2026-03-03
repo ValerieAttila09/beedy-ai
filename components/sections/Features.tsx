@@ -13,7 +13,7 @@ const Features = () => {
       <div className="space-y-6 py-4">
         <div className="w-full space-y-4 flex flex-col items-center justify-center">
           <span className="text-xs text-neutral-600 font-normal px-4 py-1 rounded-full shadow border border-border">Features</span>
-          <h1 className="text-4xl sm:text-5xl font-semibold text-foreground">Solve Your Biggest Tasks Challenges</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">Solve Your Biggest Tasks Challenges</h1>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {FEATURES_EN.map((feature, i) => {

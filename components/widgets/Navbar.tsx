@@ -5,6 +5,8 @@ import { ManagementBar } from '../animate-ui/components/community/management-bar
 import { Menu } from 'lucide-react';
 import {Button} from "@/components/ui/button";
 import { useSidebarStore } from '@/lib/store/use-sidebar';
+import Image from 'next/image';
+import BeedyLogo from "../../assets/icons/logo-beedy-ai-new.png";
 
 const Navbar = () => {
 	const { isOpen, toggleSidebar } = useSidebarStore();
@@ -19,7 +21,9 @@ const Navbar = () => {
 			<div className="md:hidden bg-white border-b border-border">
 				<div className="flex items-center justify-between px-4 py-[7.5px]">
 					<div className="">
-						<Link href="/" className="font-semibold text-lg">Beedy AI</Link>
+						<Link href="/" className="size-8 overflow-hidden">
+							<Image src={BeedyLogo} alt='Beedy Logo' width={28} height={28} className='w-full h-full object-cover'/>
+						</Link>
 					</div>
 					<div className="flex items-center justify-end gap-3">
 
