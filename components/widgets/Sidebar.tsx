@@ -17,9 +17,11 @@ const Sidebar = () => {
     tlRef.current = gsap.timeline({ paused: true })
       .fromTo(panelRef.current, {
         opacity: 0,
+        autoAlpha: 0,
         zIndex: 0
       }, {
         opacity: 1,
+        autoAlpha: 1,
         zIndex: 40,
         duration: 0.15,
         ease: 'power2.out'
