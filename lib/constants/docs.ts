@@ -8,18 +8,27 @@ export interface DocNavItem {
 export const DOCS_NAV_DATA: DocNavItem[] = [
   {
     title: "What’s New",
-    href: "/docs/whats-new",
+    children: [
+      { title: "Release Notes", href: "/docs/whats-new/release-notes" },
+      { title: "Changelog", href: "/docs/whats-new/changelog" },
+      { title: "Upcoming Features", href: "/docs/whats-new/upcoming" },
+    ],
   },
   {
-    title: "Get Started",
+    title: "Overview",
     children: [
-      { title: "What is Beedy?", href: "/docs/get-started/what-is-beedy" },
-      { title: "Beedy Quickstart", href: "/docs/get-started/quickstart" },
-      { title: "Cookie Support", href: "/docs/get-started/cookie-support" },
-      { title: "Add a Custom Domain", href: "/docs/get-started/custom-domain" },
-      { title: "Gradually Enable Beedy", href: "/docs/get-started/gradual" },
-      { title: "Setup in CI", href: "/docs/get-started/ci" },
-      { title: "Local Development", href: "/docs/get-started/local" },
+      { title: "What is Beedy?", href: "/docs/overview/what-is-beedy" },
+      { title: "Core Concepts", href: "/docs/overview/concepts" },
+      { title: "Terminology", href: "/docs/overview/terminology" },
+    ],
+  },
+  {
+    title: "Getting Started",
+    children: [
+      { title: "Quickstart", href: "/docs/getting-started/quickstart" },
+      { title: "Install CLI", href: "/docs/getting-started/cli" },
+      { title: "Run the MCP Server", href: "/docs/getting-started/mcp-server" },
+      { title: "Local Development", href: "/docs/getting-started/local" },
     ],
   },
   {
@@ -46,6 +55,23 @@ export const DOCS_NAV_DATA: DocNavItem[] = [
       { title: "Debugging the cache", href: "/docs/edge-cache/debugging" },
       { title: "CacheGuard", href: "/docs/edge-cache/cacheguard" },
       { title: "Optimizing the cache hit rate", href: "/docs/edge-cache/optimizing" },
+    ],
+  },
+  {
+    title: "API Reference",
+    children: [
+      { title: "Authentication", href: "/docs/api/authentication" },
+      { title: "Errors & Codes", href: "/docs/api/errors" },
+      { title: "Rate Limits", href: "/docs/api/rate-limits" },
+      { title: "Model Endpoints", href: "/docs/api/models" },
+    ],
+  },
+  {
+    title: "SDKs & Tools",
+    children: [
+      { title: "JavaScript SDK", href: "/docs/sdk/js" },
+      { title: "Python SDK", href: "/docs/sdk/py" },
+      { title: "CLI", href: "/docs/sdk/cli" },
     ],
   },
 ];

@@ -4,12 +4,15 @@ import React from "react";
 import DocSidebar from "./DocSidebar";
 import { useDocsSidebarStore } from "@/lib/store/use-doc-sidebar";
 import { Menu, X } from "lucide-react";
+import DocsNavbar from "../widgets/DocsNavbar";
 
 export default function DocsLayoutClient({ children }: { children: React.ReactNode }) {
   const { isOpen, toggleDocsSidebar } = useDocsSidebarStore();
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen max-w-[95rem] mx-auto">
+      <DocsNavbar />
+
       {/* desktop sidebar */}
       <DocSidebar />
 
@@ -45,6 +48,8 @@ export default function DocsLayoutClient({ children }: { children: React.ReactNo
       <main className="flex-1 pt-14 p-8 md:ml-64">{/* account for sidebar width and header */}
         {children}
       </main>
+
+      
     </div>
   );
 }
