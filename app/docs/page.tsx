@@ -7,11 +7,11 @@ import { Code, CodeHeader, CodeBlock } from "@/components/animate-ui/components/
 
 export default function DocsIndex() {
   return (
-    <div className="relative max-w-7xl mx-auto px-4 py-4">
+    <div className="relative max-w-7xl md:mx-auto px-4 py-4">
       <div className="md:grid md:grid-cols-12 md:gap-8">
         {/* main content */}
         <div className="md:col-span-8 lg:col-span-9">
-          <div className="mb-3">
+          <div className="mb-6">
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -29,16 +29,11 @@ export default function DocsIndex() {
             </Breadcrumb>
           </div>
           <h1 id="welcome" className="text-4xl font-extrabold mb-4">Welcome to Beedy AI Docs</h1>
-          <p className="text-lg text-muted-foreground mb-4">
-            Beedy is a powerful AI model platform. These docs cover model
-            architecture, MCP server setup, CLI usage, SDKs, and everything you
-            need to integrate intelligent features into your app.
+          <p className="md:text-lg text-muted-foreground mb-4">
+            Beedy is a powerful AI model platform. These docs cover model architecture, MCP server setup, CLI usage, SDKs, and everything you need to integrate intelligent features into your app.
           </p>
           <p className="text-md text-muted-foreground mb-8">
-            The documentation is constantly updated—check this page for the
-            <strong className="text-primary"> latest announcements</strong> and
-            detailed walkthroughs across our product areas. Use the sidebar to
-            navigate by topic or explore beyond with the search box above.
+            The documentation is constantly updated—check this page for the <strong className="text-primary"> latest announcements</strong> and detailed walkthroughs across our product areas. Use the sidebar to navigate by topic or explore beyond with the search box above.
           </p>
           <div className="mb-12">
             <h2 className="text-2xl font-semibold mb-2">Latest Updates</h2>
@@ -94,8 +89,7 @@ export default function DocsIndex() {
             >
               <h2 className="text-xl font-semibold">API Reference</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Browse the full API specification, auth details, and error
-                codes.
+                Browse the full API specification, auth details, and error codes.
               </p>
               <span className="mt-4 inline-block text-sm text-primary">
                 View API docs →
@@ -107,8 +101,7 @@ export default function DocsIndex() {
             >
               <h2 className="text-xl font-semibold">CLI & Tools</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Install the Beedy CLI, generate keys, and manage your models from
-                the terminal.
+                Install the Beedy CLI, generate keys, and manage your models from the terminal.
               </p>
               <span className="mt-4 inline-block text-sm text-primary">
                 Open CLI docs →
@@ -118,14 +111,13 @@ export default function DocsIndex() {
 
           {/* callout section */}
           <h2 id="product-guides" className="text-2xl font-semibold mb-4">Product Guides</h2>
-          <div className="bg-accent border border-border rounded-lg p-8 flex flex-col lg:flex-row items-center gap-6">
+          <div className="bg-accent border border-border rounded-lg p-6 flex flex-col lg:flex-row items-center gap-6">
             <div className="flex-1">
               <h3 className="text-2xl font-semibold mb-2">
                 What are you waiting for?
               </h3>
               <p className="text-muted-foreground mb-4">
-                It only takes minutes to set up Beedy and see where you can scale
-                and optimize your GraphQL infrastructure.
+                It only takes minutes to set up Beedy and see where you can scale and optimize your GraphQL infrastructure.
               </p>
               <form className="flex max-w-md relative">
                 <Input
@@ -160,24 +152,16 @@ export default function DocsIndex() {
             <div className="text-sm font-semibold mb-2">On this page</div>
             <ul className="space-y-1 text-muted-foreground">
               <li>
-                <a href="#welcome" className="hover:text-primary">
-                  Welcome to Beedy Docs
-                </a>
+                <a href="#welcome" className="hover:text-primary">Welcome to Beedy Docs</a>
               </li>
               <li>
-                <a href="#fast-path" className="hover:text-primary">
-                  Fast Path
-                </a>
+                <a href="#fast-path" className="hover:text-primary">Fast Path</a>
               </li>
               <li>
-                <a href="#product-guides" className="hover:text-primary">
-                  Product Guides
-                </a>
+                <a href="#product-guides" className="hover:text-primary">Product Guides</a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary">
-                  From Engineering Blog
-                </a>
+                <a href="#" className="hover:text-primary">From Engineering Blog</a>
               </li>
             </ul>
           </div>

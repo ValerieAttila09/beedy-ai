@@ -1,24 +1,38 @@
-import { GithubIcon, Search } from 'lucide-react'
+import { GithubIcon, Search, Menu } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Kbd } from '../ui/kbd'
 import { Button } from '../ui/button'
+import { useDocsSidebarStore } from '@/lib/store/use-doc-sidebar';
 
 const DocsNavbar = () => {
   return (
     <div className='fixed top-0 inset-x-0 z-50 h-auto bg-white py-2'>
-      <div className="mx-auto max-w-7xl w-full flex items-center justify-between">
-        <div className="">
+      <div className="mx-auto max-w-[94rem] w-full flex items-center justify-between">
+        <div className="hidden md:flex items-center gap-8 px-3">
           <Link href="/docs" className="text-lg font-semibold">
-            Beedy Docs
+            <span className="">Beedy AI</span>
           </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="font-medium text-neutral-800 hover:text-black">Home</Link>
+            <Link href="/" className="font-medium text-neutral-800 hover:text-black">Docs</Link>
+            <Link href="/" className="font-medium text-neutral-800 hover:text-black">Blog</Link>
+          </div>
         </div>
-        <div className="flex items-center gap-4">
-          <button className="rounded-md border border-border bg-accent w-80 h-8 px-2 flex items-center justify-between">
+        <div className="flex items-center justify-start gap-4">
+          <button className="hidden rounded-md border border-border bg-accent w-80 h-8 px-2 md:flex items-center justify-between">
             <span className="text-sm font-normal text-neutral-600">search documentation...</span>
             <Kbd className="bg-accent border border-border rounded">⌘K</Kbd>
           </button>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center md:justify-start justify-between gap-4">
+            {/* mobile sidebar toggle */}
+            <button
+              onClick={() => useDocsSidebarStore.getState().toggleDocsSidebar()}
+              className="md:hidden"
+              aria-label="Open docs menu"
+            >
+              <Menu className="size-5" />
+            </button>
             <Button size={'sm'} variant={'ghost'} className='rounded-md flex gap-1'>
               <GithubIcon className='size-4 text-black' />
               <span className="text-neutral-600 text-sm font-thin">12,427</span>
