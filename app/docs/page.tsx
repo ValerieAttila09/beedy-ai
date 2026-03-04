@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Code, CodeHeader, CodeBlock } from "@/components/animate-ui/components/animate/code";
 
 export default function DocsIndex() {
   return (
@@ -9,6 +11,23 @@ export default function DocsIndex() {
       <div className="md:grid md:grid-cols-12 md:gap-8">
         {/* main content */}
         <div className="md:col-span-8 lg:col-span-9">
+          <div className="mb-3">
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="#">Docs</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="#">What's New</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Release Notes</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
           <h1 id="welcome" className="text-4xl font-extrabold mb-4">Welcome to Beedy AI Docs</h1>
           <p className="text-lg text-muted-foreground mb-4">
             Beedy is a powerful AI model platform. These docs cover model
@@ -123,21 +142,21 @@ export default function DocsIndex() {
                 </Button>
               </form>
             </div>
-            <pre className="bg-surface p-4 rounded-lg overflow-x-auto text-xs flex-1">
-              <code>
-                {`npx beedy serve --backend-port 4000
+            {/* animated code snippet */}
+            <Code code={`npx beedy serve --backend-port 4000
 > Getting dependencies …
 > Creating local dev environment …
 > A Beedy service for your local GraphQL API is now running at
-  http://localhost:5800/`}
-              </code>
-            </pre>
+  http://localhost:5800/`} className="flex-1">
+              <CodeHeader copyButton>Terminal</CodeHeader>
+              <CodeBlock cursor lang="bash" />
+            </Code>
           </div>
         </div>
 
         {/* right-hand table of contents placeholder */}
         <aside className="hidden lg:block lg:col-span-3 xl:col-span-3">
-          <div className="sticky top-0">
+          <div className="sticky top-18">
             <div className="text-sm font-semibold mb-2">On this page</div>
             <ul className="space-y-1 text-muted-foreground">
               <li>
