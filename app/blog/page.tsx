@@ -165,9 +165,9 @@ export default function BlogIndex() {
           <aside className="md:sticky md:top-24 self-start">
             <div className="rounded-md border border-border/60 bg-background/80 p-5 shadow-sm backdrop-blur">
               <div className="space-y-2">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                  Label
-                </span>
+<label htmlFor="search-article" className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+  Label
+</label>
                 <div className="relative">
                   <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                   <input
