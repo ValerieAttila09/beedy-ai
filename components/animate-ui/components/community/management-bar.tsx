@@ -9,6 +9,7 @@ import { BUTTON_MOTION_CONFIG, LABEL_VARIANTS, LABEL_TRANSITION, NAVBAR_MENU_DAT
 import { Icons } from '@/lib/constants/icons';
 import BeedyAiLogo from "../../../../assets/icons/logo-beedy-ai-new.svg";
 import Image from 'next/image';
+import Link from 'next/link';
 
 function ManagementBar() {
   return (
@@ -25,7 +26,7 @@ function ManagementBar() {
               className="flex h-auto items-center space-x-2 overflow-hidden whitespace-nowrap rounded-full bg-white shadow-sm dark:bg-neutral-600/80 px-2.5 py-2.5 text-white"
               aria-label={`Beedy AI`}
             >
-              <Image src={BeedyAiLogo} alt="Beedy AI Logo" className='size-5' width={20} height={20}/>
+              <Image src={BeedyAiLogo} alt="Beedy AI Logo" className='size-5' width={20} height={20} />
               <motion.span
                 variants={LABEL_VARIANTS}
                 transition={LABEL_TRANSITION}
@@ -44,21 +45,22 @@ function ManagementBar() {
             {NAVBAR_MENU_DATA.map((data) => {
               const MenuIcon = data.icon;
               return (
-                <motion.button
-                  key={data.title}
-                  {...BUTTON_MOTION_CONFIG}
-                  className="flex h-auto items-center space-x-2 overflow-hidden whitespace-nowrap rounded-full bg-white shadow-sm dark:bg-neutral-600/80 px-2.5 py-2.5 text-neutral-600 dark:text-neutral-200"
-                  aria-label={data.title}
-                >
-                  <MenuIcon size={20} className="shrink-0" />
-                  <motion.span
-                    variants={LABEL_VARIANTS}
-                    transition={LABEL_TRANSITION}
-                    className="invisible text-sm text-foreground font-medium"
+                <Link href={data.href} className="cursor-pointer" key={data.title}> 
+                  <motion.button
+                    {...BUTTON_MOTION_CONFIG}
+                    className="flex h-auto items-center space-x-2 overflow-hidden whitespace-nowrap rounded-full bg-white shadow-sm dark:bg-neutral-600/80 px-2.5 py-2.5 text-neutral-600 dark:text-neutral-200"
+                    aria-label={data.title}
                   >
-                    {data.title}
-                  </motion.span>
-                </motion.button>
+                    <MenuIcon size={20} className="shrink-0" />
+                    <motion.span
+                      variants={LABEL_VARIANTS}
+                      transition={LABEL_TRANSITION}
+                      className="invisible text-sm text-foreground font-medium"
+                    >
+                      {data.title}
+                    </motion.span>
+                  </motion.button>
+                </Link>
               );
             })}
           </motion.div>

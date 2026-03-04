@@ -134,22 +134,22 @@ export default function BlogIndex() {
       return bTime - aTime;
     })
     .filter((p) => {
-    if (selectedCategory !== "All") {
-      if (!p.tags?.includes(selectedCategory)) return false;
-    }
-    if (search && !p.title.toLowerCase().includes(search.toLowerCase())) {
-      return false;
-    }
-    return true;
-  });
+      if (selectedCategory !== "All") {
+        if (!p.tags?.includes(selectedCategory)) return false;
+      }
+      if (search && !p.title.toLowerCase().includes(search.toLowerCase())) {
+        return false;
+      }
+      return true;
+    });
 
   const [featured, ...others] = filtered;
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-background via-background to-purple-50/60 dark:to-slate-950/60">
-      <div className="mx-auto max-w-[92rem] px-4 py-12 sm:px-6 lg:px-10 lg:py-16">
+      <div className="mx-auto max-w-[92rem] px-4 py-12 sm:px-6 lg:px-10 lg:py-20">
         <header className="text-center mb-10 sm:mb-14">
-          <p className="inline-flex items-center rounded-full border border-border/70 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur">
+          <p className="inline-flex items-center rounded-full border border-purple-300 bg-purple-100 px-3 py-1 text-xs font-medium text-purple-500 shadow-sm backdrop-blur">
             Read our blog
           </p>
           <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
@@ -165,9 +165,9 @@ export default function BlogIndex() {
           <aside className="md:sticky md:top-24 self-start">
             <div className="rounded-md border border-border/60 bg-background/80 p-5 shadow-sm backdrop-blur">
               <div className="space-y-2">
-<label htmlFor="search-article" className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-  Label
-</label>
+                <label htmlFor="search-article" className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  Label
+                </label>
                 <div className="relative">
                   <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                   <input
@@ -200,11 +200,10 @@ export default function BlogIndex() {
                       <button
                         type="button"
                         onClick={() => setSelectedCategory(cat)}
-                        className={`flex w-full items-center justify-between rounded px-3 py-2 text-sm transition ${
-                          selectedCategory === cat
-                            ? "bg-primary text-primary-foreground"
+                        className={`cursor-pointer flex w-full items-center justify-between rounded px-3 py-2 text-sm transition ${selectedCategory === cat
+                            ? "bg-fuchsia-100 text-fuchsia-500 border border-fuchsia-200"
                             : "text-muted-foreground hover:bg-muted/60"
-                        }`}
+                          }`}
                       >
                         <span>{cat}</span>
                       </button>
@@ -237,7 +236,7 @@ export default function BlogIndex() {
                     )}
 
                     <div className="relative p-5 sm:p-7 md:p-8">
-                      <p className="inline-flex items-center rounded-full border border-border/70 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur">
+                      <p className="inline-flex items-center rounded-full border border-fuchsia-300 bg-fuchsia-100 px-3 py-1 text-xs font-medium text-fuchsia-500 shadow-sm backdrop-blur">
                         Featured
                       </p>
                       <h2 className="mt-4 text-2xl sm:text-3xl font-bold leading-tight tracking-tight">
