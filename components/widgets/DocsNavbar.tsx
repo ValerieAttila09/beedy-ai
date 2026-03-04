@@ -19,20 +19,22 @@ const DocsNavbar = () => {
             <Link href="/" className="font-medium text-neutral-800 hover:text-black">Blog</Link>
           </div>
         </div>
+        <div className="md:hidden px-2">
+          <button
+            onClick={() => useDocsSidebarStore.getState().toggleDocsSidebar()}
+            className="p-2"
+            aria-label="Open docs menu"
+          >
+            <Menu className="size-5" />
+          </button>
+        </div>
+        {/* mobile sidebar toggle */}
         <div className="flex items-center justify-start gap-4">
           <button className="hidden rounded-md border border-border bg-accent w-80 h-8 px-2 md:flex items-center justify-between">
             <span className="text-sm font-normal text-neutral-600">search documentation...</span>
             <Kbd className="bg-accent border border-border rounded">⌘K</Kbd>
           </button>
-          <div className="flex items-center md:justify-start justify-between gap-4">
-            {/* mobile sidebar toggle */}
-            <button
-              onClick={() => useDocsSidebarStore.getState().toggleDocsSidebar()}
-              className="md:hidden"
-              aria-label="Open docs menu"
-            >
-              <Menu className="size-5" />
-            </button>
+          <div className="flex md:w-auto w-full items-center md:justify-start justify-between gap-4 px-4">
             <Button size={'sm'} variant={'ghost'} className='rounded-md flex gap-1'>
               <GithubIcon className='size-4 text-black' />
               <span className="text-neutral-600 text-sm font-thin">12,427</span>
