@@ -47,9 +47,19 @@ function NavItem({ item, level = 0 }: { item: DocNavItem; level?: number }) {
   );
 }
 
-export default function DocSidebar() {
+interface DocSidebarProps {
+  // when true the sidebar is rendered without responsive hiding and fixed positioning
+  mobile?: boolean;
+}
+
+export default function DocSidebar({ mobile = false }: DocSidebarProps) {
+  // base classes; hide on small screens unless mobile override
+  const baseClass = mobile
+    ? "flex relative w-full h-full bg-white flex-col px-6 py-10 overflow-y-auto"
+    : "hidden md:flex fixed bottom-0 top-8 w-64 bg-white flex-col px-6 py-10 overflow-y-auto";
+
   return (
-    <aside className="hidden md:flex fixed bottom-0 top-8 w-64 bg-white flex-col px-6 py-10 overflow-y-auto">
+    <aside className={baseClass}>
       <nav>
         <ul className="space-y-2">
           {DOCS_NAV_DATA.map((item) => (

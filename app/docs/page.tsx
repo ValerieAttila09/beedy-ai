@@ -110,7 +110,7 @@ export default function DocsIndex() {
           </div>
 
           {/* callout section */}
-          <h2 id="product-guides" className="text-2xl font-semibold mb-4">Product Guides</h2>
+          {/* <h2 id="product-guides" className="text-2xl font-semibold mb-4">Product Guides</h2>
           <div className="bg-accent border border-border rounded-lg p-6 flex flex-col lg:flex-row items-center gap-6">
             <div className="flex-1">
               <h3 className="text-2xl font-semibold mb-2">
@@ -134,7 +134,6 @@ export default function DocsIndex() {
                 </Button>
               </form>
             </div>
-            {/* animated code snippet */}
             <Code code={`npx beedy serve --backend-port 4000
 > Getting dependencies …
 > Creating local dev environment …
@@ -143,7 +142,7 @@ export default function DocsIndex() {
               <CodeHeader copyButton>Terminal</CodeHeader>
               <CodeBlock cursor lang="bash" />
             </Code>
-          </div>
+          </div> */}
         </div>
 
         {/* right-hand table of contents placeholder */}

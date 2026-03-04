@@ -60,14 +60,14 @@ export default function DocsLayoutClient({ children }: { children: React.ReactNo
         />
         <div
           ref={panelRef}
-          className="relative bg-white w-64 h-full shadow-lg p-6 overflow-y-auto -translate-x-full"
+          className="absolute inset-y-0 left-0 bg-white w-full h-full shadow-lg p-6 overflow-y-auto -translate-x-full"
         >
           <div className="flex justify-end mb-4">
             <button onClick={toggleDocsSidebar} aria-label="Close menu">
               <X className="size-5" />
             </button>
           </div>
-          <DocSidebar />
+          <DocSidebar mobile />
         </div>
       </div>
 
