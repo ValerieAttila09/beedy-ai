@@ -7,14 +7,12 @@ import { DOCS_NAV_DATA, DocNavItem } from "@/lib/constants/docs";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Separator } from "../ui/separator";
 
-// recursive component for nested nav items
 function NavItem({ item, level = 0 }: { item: DocNavItem; level?: number }) {
   const pathname = usePathname();
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(isMobile ? false : true);
   const hasChildren = item.children && item.children.length > 0;
 
-  // highlight if current path starts with the item href
   const isActive = item.href ? pathname?.startsWith(item.href) : false;
 
   return (
@@ -51,12 +49,10 @@ function NavItem({ item, level = 0 }: { item: DocNavItem; level?: number }) {
 }
 
 interface DocSidebarProps {
-  // when true the sidebar is rendered without responsive hiding and fixed positioning
   mobile?: boolean;
 }
 
 export default function DocSidebar({ mobile = false }: DocSidebarProps) {
-  // base classes; hide on small screens unless mobile override
   const baseClass = mobile
     ? "flex relative w-full h-full bg-white flex-col px-6 py-10 overflow-y-auto"
     : "hidden md:flex fixed bottom-0 top-8 w-64 bg-white flex-col px-6 py-10 overflow-y-auto";
@@ -67,7 +63,7 @@ export default function DocSidebar({ mobile = false }: DocSidebarProps) {
     <aside className={baseClass}>
       <nav>
         {isMobile ? (
-          <div className="flex flex-col gap-2 mb-6">
+          <div className="flex flex-col gap-2 mb-6 sm:mb-0">
             <h3 className="text-lg mb-2 font-medium text-neutral-600">MENU</h3>
             <div className="flex flex-col gap-2 pl-4">
               <Link href="/" className="text-2xl font-semibold">
@@ -82,7 +78,7 @@ export default function DocSidebar({ mobile = false }: DocSidebarProps) {
             </div>
           </div>
         ) : null}
-        <Separator className="my-4" />
+        <Separator className="my-4 md:hidden" />
         <ul className="space-y-2">
           {DOCS_NAV_DATA.map((item) => (
             <NavItem key={item.title} item={item} />

@@ -4,123 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import BlogCard, { BlogCardProps } from "@/components/blog/BlogCard";
 import { Search, ChevronDown } from "lucide-react";
-
-const POSTS: BlogCardProps[] = [
-  {
-    slug: "release-notes-3-2",
-    title: "Release Notes v3.2: Faster Docs, Better Auth, Smoother Onboarding",
-    excerpt:
-      "A quick tour of what shipped in v3.2—improved documentation flows, clearer API authentication examples, and quality-of-life updates across the platform.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Release+Notes",
-    author: "Beedy AI Team",
-    date: "2026-03-01",
-    tags: ["Product", "Docs", "API"],
-  },
-  {
-    slug: "what-is-beedy-core-concepts",
-    title: "What is Beedy AI? Core Concepts You Should Know",
-    excerpt:
-      "Beedy AI is a modern conversational AI platform for 24/7 support, seamless integrations, and analytics. Here are the core concepts and terminology that make the platform click.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Core+Concepts",
-    author: "Priya Nair",
-    date: "2026-02-18",
-    tags: ["Docs", "Product", "Terminology"],
-  },
-  {
-    slug: "quickstart-from-zero-to-first-assistant",
-    title: "Quickstart: From Zero to Your First Beedy Assistant in Minutes",
-    excerpt:
-      "A practical walkthrough of your first setup: connect a channel, test a conversation, and iterate safely before rolling out to real customers.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Quickstart",
-    author: "Aisha Rahman",
-    date: "2026-02-10",
-    tags: ["Getting Started", "Integrations", "Product"],
-  },
-  {
-    slug: "seamless-integration-playbook",
-    title: "Seamless Integration Playbook: Email, Chat, CRM, and Webhooks",
-    excerpt:
-      "How teams connect Beedy AI to existing workflows without rewrites—channels, connectors, webhooks, and the mental model for reliable routing.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Integrations",
-    author: "Marco Silva",
-    date: "2026-01-29",
-    tags: ["Integrations", "API", "Workflows"],
-  },
-  {
-    slug: "advanced-analytics-what-to-measure",
-    title: "Advanced Analytics: What to Measure in AI Support Conversations",
-    excerpt:
-      "Dashboards are only useful if the metrics are. Here’s how to track resolution rate, deflection, escalations, and where to focus improvements.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Analytics",
-    author: "Owen Park",
-    date: "2026-01-12",
-    tags: ["Analytics", "Product", "Operations"],
-  },
-  {
-    slug: "api-authentication-oauth-keys",
-    title: "API Authentication in Beedy AI: Keys, OAuth, and Safer Defaults",
-    excerpt:
-      "A security-minded overview of how to authenticate requests, rotate credentials, and avoid common pitfalls when integrating Beedy AI via API.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=API+Auth",
-    author: "Dr. Lena Kovács",
-    date: "2025-12-22",
-    tags: ["API", "Security", "Docs"],
-  },
-  {
-    slug: "rate-limits-and-errors-that-scale",
-    title: "Rate Limits & Error Codes: Designing Clients That Scale",
-    excerpt:
-      "Learn how to build resilient clients: backoff strategies, interpreting error codes, and how to keep user experience stable under load.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Rate+Limits",
-    author: "Diego Alvarez",
-    date: "2025-12-05",
-    tags: ["API", "Engineering", "Reliability"],
-  },
-  {
-    slug: "graphql-metrics-quickstart",
-    title: "GraphQL Metrics Quickstart: Visibility Before Optimization",
-    excerpt:
-      "Before you tune performance, you need signal. Here’s how to start collecting GraphQL metrics and turn logs into actionable insights.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=GraphQL+Metrics",
-    author: "Ravi Patel",
-    date: "2025-11-20",
-    tags: ["GraphQL Metrics", "Analytics", "Engineering"],
-  },
-  {
-    slug: "edge-cache-rules-and-invalidation",
-    title: "Edge Cache Rules & Invalidation: Keep GraphQL Fast and Correct",
-    excerpt:
-      "Caching is easy until it isn’t. We break down cache rules, scopes, key fields, and safe invalidation patterns for real apps.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=Edge+Cache",
-    author: "Maya Chen",
-    date: "2025-11-03",
-    tags: ["Edge Cache", "GraphQL", "Performance"],
-  },
-  {
-    slug: "cli-and-mcp-server-local-dev",
-    title: "CLI + MCP Server: A Local Dev Setup That Feels Instant",
-    excerpt:
-      "Spin up the MCP server, iterate on configuration, and validate integrations locally. This is the workflow we recommend for fast, safe development.",
-    imageUrl: "https://via.placeholder.com/1200x600.png?text=CLI+%2B+MCP",
-    author: "Beedy AI Team",
-    date: "2025-10-14",
-    tags: ["SDKs & Tools", "Getting Started", "Docs"],
-  },
-];
-
-const CATEGORIES = [
-  "All",
-  "Product",
-  "Getting Started",
-  "Docs",
-  "Integrations",
-  "Analytics",
-  "API",
-  "Security",
-  "GraphQL Metrics",
-  "Edge Cache",
-  "SDKs & Tools",
-];
+import { CATEGORIES, POSTS } from "@/lib/constants/blog";
+import Image from "next/image";
 
 export default function BlogIndex() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -146,7 +31,7 @@ export default function BlogIndex() {
   const [featured, ...others] = filtered;
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-background via-background to-purple-50/60 dark:to-slate-950/60">
+    <div className="relative min-h-screen bg-linear-to-br from-background via-background to-purple-50/60 dark:to-slate-950/60">
       <div className="mx-auto max-w-[92rem] px-4 py-12 sm:px-6 lg:px-10 lg:py-20">
         <header className="text-center mb-10 sm:mb-14">
           <p className="inline-flex items-center rounded-full border border-purple-300 bg-purple-100 px-3 py-1 text-xs font-medium text-purple-500 shadow-sm backdrop-blur">
@@ -201,8 +86,8 @@ export default function BlogIndex() {
                         type="button"
                         onClick={() => setSelectedCategory(cat)}
                         className={`cursor-pointer flex w-full items-center justify-between rounded px-3 py-2 text-sm transition ${selectedCategory === cat
-                            ? "bg-fuchsia-100 text-fuchsia-500 border border-fuchsia-200"
-                            : "text-muted-foreground hover:bg-muted/60"
+                          ? "bg-fuchsia-100 text-fuchsia-500 border border-fuchsia-200"
+                          : "text-muted-foreground hover:bg-muted/60"
                           }`}
                       >
                         <span>{cat}</span>
@@ -224,14 +109,14 @@ export default function BlogIndex() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-[1.35fr_1fr]">
                     {featured.imageUrl && (
-                      <div className="relative h-56 sm:h-64 md:h-full min-h-[220px]">
-                        <img
+                      <div className="relative h-56 sm:h-64 md:h-full overflow-hidden min-h-[220px]">
+                        <Image
                           src={featured.imageUrl}
                           alt={featured.title}
+                          height={480}
+                          width={720}
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/10 to-black/20 md:bg-gradient-to-r md:from-black/10 md:via-black/10 md:to-black/30" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent md:hidden" />
                       </div>
                     )}
 

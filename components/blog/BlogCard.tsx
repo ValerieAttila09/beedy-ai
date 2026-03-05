@@ -1,12 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export interface BlogCardProps {
   slug: string;
   title: string;
   excerpt: string;
-  imageUrl?: string;
+  imageUrl?: any;
   author: string;
   date: string;
   tags?: string[];
@@ -27,9 +28,11 @@ export default function BlogCard({
     <article className="group overflow-hidden rounded-3xl border border-border/60 bg-background/80 shadow-sm transition hover:shadow-md">
       {imageUrl && (
         <div className="relative h-48 w-full">
-          <img
+          <Image
             src={imageUrl}
             alt={title}
+            height={480}
+            width={568}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>

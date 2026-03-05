@@ -45,10 +45,8 @@ export default function DocsLayoutClient({ children }: { children: React.ReactNo
     <div className="flex min-h-screen max-w-[95rem] mx-auto">
       <DocsNavbar />
 
-      {/* desktop sidebar */}
       <DocSidebar />
 
-      {/* mobile sidebar overlay */}
       <div
         ref={overlayRef}
         className="md:hidden fixed inset-0 z-50 pointer-events-none opacity-0"
